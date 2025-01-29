@@ -17,7 +17,7 @@ DEFAULT_DATA_PATH = 'data/output.csv'  # Relative path
 # Authentication Function
 def authenticate(password):
     """Check if the entered password matches the stored password."""
-    return password == st.secrets["credentials"]["password"]
+    return password == os.getenv("STREAMLIT_SECRET_PASSWORD")
 
 # Login Interface
 def login():
